@@ -1,5 +1,6 @@
 import { Card, CardContent } from "@/components/ui/card";
 import giPipesImg from "@/assets/products/gi-pipes-new.jpg";
+import msPipesImg from "@/assets/products/ms-pipes.jpg";
 import squarePipesImg from "@/assets/products/square-pipes.png";
 import rectangularPipesImg from "@/assets/products/rectangular-pipes.png";
 import msSheetImg from "@/assets/products/ms-sheet.jpg";
@@ -12,7 +13,7 @@ import cpvcImg from "@/assets/products/cpvc.jpg";
 
 const products = [
   { id: 1, name: "G.I Pipes", image: giPipesImg },
-  { id: 2, name: "MS Pipes", image: giPipesImg },
+  { id: 2, name: "MS Pipes", image: msPipesImg },
   { id: 3, name: "Square Pipes", image: squarePipesImg },
   { id: 4, name: "Rectangular Pipes", image: rectangularPipesImg },
   { id: 5, name: "MS Sheet", image: msSheetImg },
