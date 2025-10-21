@@ -4,9 +4,14 @@
     <meta charset="utf-8">
     <title>Ganesh Tube Corporation</title>
     <script>
-      // Store the path for the real index.html to use
-      sessionStorage.setItem('path', window.location.pathname);
-      window.location.replace(window.location.origin);
+      // Preserve the intended SPA path for BrowserRouter
+      sessionStorage.setItem('path', window.location.pathname + window.location.search + window.location.hash);
+      // Detect project base on GitHub Pages (user.github.io/repo) and redirect to it
+      (function() {
+        var segments = window.location.pathname.split('/').filter(Boolean);
+        var base = segments.length > 0 ? '/' + segments[0] + '/' : '/';
+        window.location.replace(window.location.origin + base);
+      })();
     </script>
   </head>
   <body>
