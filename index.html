@@ -20,6 +20,16 @@
   </head>
 
   <body>
+    <script>
+      // Handle SPA routing for GitHub Pages
+      (function() {
+        var redirect = sessionStorage.getItem('path');
+        if (redirect && redirect !== '/') {
+          sessionStorage.removeItem('path');
+          history.replaceState(null, '', redirect);
+        }
+      })();
+    </script>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
