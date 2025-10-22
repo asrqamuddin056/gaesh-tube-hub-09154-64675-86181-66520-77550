@@ -12,3 +12,5 @@ Allow: /
 
 User-agent: *
 Allow: /
+
+Sitemap: https://ganeshtubecorporation.github.io/ganesh-tube-corporation/sitemap.xml

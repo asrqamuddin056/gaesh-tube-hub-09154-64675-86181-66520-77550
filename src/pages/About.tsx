@@ -1,5 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
+import SEO from "@/components/SEO";
+import { breadcrumbSchema } from "@/lib/structuredData";
 import aboutImage from "@/assets/about-facility.jpg";
 
 const About = () => {
@@ -55,8 +57,21 @@ const About = () => {
     { year: "2024", event: "Serving Telangana Region with Excellence" },
   ];
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://ganeshtubecorporation.github.io/ganesh-tube-corporation/" },
+    { name: "About", url: "https://ganeshtubecorporation.github.io/ganesh-tube-corporation/#/about" }
+  ]);
+
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO
+        title="About Us | Ganesh Tube Corporation - 30+ Years of Excellence"
+        description="Learn about Ganesh Tube Corporation, established in 1993 by Mr. Ajay Jain. Authorized distributor for Jindal Hissar and dealer for Tata Pipes, Apollo, and other premium brands in Secunderabad."
+        canonical="/#/about"
+        keywords="Ganesh Tube Corporation, Ajay Jain, Jindal distributor, Tata pipes dealer, Secunderabad pipes, industrial supplier"
+        structuredData={breadcrumbs}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[300px] flex items-center justify-center bg-gradient-to-r from-primary to-primary/80">
         <div className="container relative z-10 mx-auto px-4 text-center">
@@ -177,6 +192,7 @@ const About = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import { ArrowRight, CheckCircle, Truck, PackageCheck, Clock, Headset, MessageCircle } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
+import SEO from "@/components/SEO";
+import { organizationSchema, localBusinessSchema } from "@/lib/structuredData";
 import heroImage from "@/assets/hero-manufacturing.jpg";
 import qualityServiceImage from "@/assets/quality-service.jpg";
 
@@ -34,8 +36,16 @@ const Home = () => {
   ];
 
   return (
-    <div className="min-h-screen">
-      {/* WhatsApp Floating Button */}
+    <>
+      <SEO
+        title="Ganesh Tube Corporation | MS Pipes, GI Pipes & Steel Tubes Manufacturer"
+        description="Leading manufacturer and authorized distributor of MS pipes, GI pipes, steel tubes, square pipes, rectangular pipes, and industrial piping solutions in Secunderabad, Telangana."
+        canonical="/"
+        keywords="MS pipes, GI pipes, steel tubes, square pipes, rectangular pipes, pipe fittings, MS sheets, GI sheets, industrial piping, Secunderabad, Telangana, Jindal pipes, Tata pipes"
+        structuredData={[organizationSchema, localBusinessSchema]}
+      />
+      <div className="min-h-screen">
+        {/* WhatsApp Floating Button */}
       <a
         href="https://wa.me/919985215010"
         target="_blank"
@@ -161,6 +171,7 @@ const Home = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 

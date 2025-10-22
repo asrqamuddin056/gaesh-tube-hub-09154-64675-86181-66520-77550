@@ -1,5 +1,7 @@
 import { Mail, Phone, MapPin } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
+import SEO from "@/components/SEO";
+import { breadcrumbSchema } from "@/lib/structuredData";
 
 const Contact = () => {
   const contactInfo = [
@@ -28,8 +30,21 @@ const Contact = () => {
     },
   ];
 
+  const breadcrumbs = breadcrumbSchema([
+    { name: "Home", url: "https://ganeshtubecorporation.github.io/ganesh-tube-corporation/" },
+    { name: "Contact", url: "https://ganeshtubecorporation.github.io/ganesh-tube-corporation/#/contact" }
+  ]);
+
   return (
-    <div className="min-h-screen">
+    <>
+      <SEO
+        title="Contact Us | Ganesh Tube Corporation - Get a Quote Today"
+        description="Contact Ganesh Tube Corporation in Secunderabad. Call us at 9985215010 or visit our shop at Lala Temple Complex, Ranigunj for all your industrial piping needs."
+        canonical="/#/contact"
+        keywords="contact Ganesh Tube, Secunderabad pipes supplier, industrial pipes quote, Ranigunj contact"
+        structuredData={breadcrumbs}
+      />
+      <div className="min-h-screen">
       {/* Hero Section */}
       <section className="relative h-[200px] flex items-center justify-center bg-gradient-to-r from-primary to-primary/80">
         <div className="container relative z-10 mx-auto px-4 text-center">
@@ -73,6 +88,7 @@ const Contact = () => {
         </div>
       </section>
     </div>
+    </>
   );
 };
 
